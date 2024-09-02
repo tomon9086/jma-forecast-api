@@ -2,15 +2,21 @@
   "name": "jma-forecast-api",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/bundle.js",
+  "main": "dist/cjs/main.js",
+  "module": "dist/es/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup src/main.js -o dist/bundle.js -f cjs"
+    "build": "rollup --config --bundleConfigAsCjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "rollup": "^4.21.2"
+    "@babel/preset-env": "^7.25.4",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.21.2",
+    "tslib": "^2.7.0",
+    "typescript": "^5.5.4"
   }
 }
